@@ -4,7 +4,7 @@
  * This class provides the means to safetly and easily update a plugin, or check to see if it is updated using dev.bukkit.org
  */
 
-package com.mineandcraft.ops99.bukkit.CFBanner;
+package thesbros.bukkit.CFBanner;
 
 import java.io.*;
 import java.net.MalformedURLException;
@@ -45,7 +45,7 @@ public class Updater
     private String versionTitle;
     private String versionLink;
     private long totalSize; // Holds the total size of the file
-    private double downloadedSize; // TODO: Holds the number of bytes downloaded
+    //private double downloadedSize; TODO: Holds the number of bytes downloaded
     private int sizeLine; // Used for detecting file size
     private int multiplier; // Used for determining when to broadcast download updates
     private boolean announce; // Whether to announce file downloads
@@ -296,7 +296,7 @@ public class Updater
                 // Unzip
                 unzip(dFile.getCanonicalPath());
             }
-            if(announce) plugin.getLogger().info("Finished updating. Reload (/rl) or restart to install the new version.");
+            if(announce) plugin.getLogger().info("Finished updating.");
         }
         catch (Exception ex)
         {
@@ -332,7 +332,7 @@ public class Updater
             File fSourceZip = new File(file);
             String zipPath = file.substring(0, file.length()-4);
             ZipFile zipFile = new ZipFile(fSourceZip);
-            Enumeration e = zipFile.entries();
+            Enumeration<? extends ZipEntry> e = zipFile.entries();
             while(e.hasMoreElements())
             {
                 ZipEntry entry = (ZipEntry)e.nextElement();
@@ -494,7 +494,17 @@ public class Updater
             if(title.split("v").length == 2)
             {
                 String remoteVersion = title.split("v")[1].split(" ")[0]; // Get the newest file's version number
-                if(hasTag(version) || version.equalsIgnoreCase(remoteVersion))
+                int remVer = -1,curVer=0;
+                try
+                {
+                    remVer = calVer(remoteVersion);
+                    curVer = calVer(version);
+                }
+                catch(NumberFormatException nfe)
+                {
+                remVer=-1;
+                }
+                if(hasTag(version)||version.equalsIgnoreCase(remoteVersion)||curVer>=remVer)
                 {
                     // We already have the latest version, or this build is tagged for no-update
                     result = Updater.UpdateResult.NO_UPDATE;
@@ -513,7 +523,26 @@ public class Updater
         }
         return true;
     }
-        
+    /**
+     * Used to calculate the version string as an Integer
+     */ 
+    private Integer calVer(String s) throws NumberFormatException
+    {
+        if(s.contains("."))
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i <s.length(); i++) 
+            {
+                Character c = s.charAt(i);
+                if (Character.isLetterOrDigit(c)) 
+                {
+                    sb.append(c);
+                }
+            }
+        	return Integer.parseInt(sb.toString());
+        }
+        return Integer.parseInt(s);
+    }
     /**
      * Evaluate whether the version number is marked showing that it should not be updated by this program
      */  
@@ -531,7 +560,7 @@ public class Updater
     
     /**
      * Part of RSS Reader by Vogella, modified by H31IX for use with Bukkit
-     */     
+     */ 
     private void readFeed() 
     {
         try 

@@ -1,4 +1,4 @@
-package com.mineandcraft.ops99.bukkit.CFBanner;
+package thesbros.bukkit.CFBanner;
 
 /*
  * Copyright 2011 Tyler Blair. All rights reserved.
