@@ -7,23 +7,9 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>CFBanner</name>
   <url>http://dev.bukkit.org/server-mods/cfbanner</url>
-  <dependencies>
-    <dependency>
-      <groupId>org.bukkit</groupId>
-      <artifactId>bukkit</artifactId>
-      <version>1.3.2-R2.1</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.10</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-   <repositories>
+  <repositories>
     <repository>
-      <id>bukkit</id>
+      <id>bukkit-repo</id>
       <url>http://repo.bukkit.org/content/groups/public/</url>
     </repository>
     <repository>
@@ -35,6 +21,20 @@
       <url>http://repo.maven.apache.org/maven2</url>
     </repository>
   </repositories>
+  <dependencies>
+    <dependency>
+      <groupId>org.bukkit</groupId>
+      <artifactId>bukkit</artifactId>
+      <version>1.3.2-R2.1-SNAPSHOT</version>
+      <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.10</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
   <pluginRepositories>
     <pluginRepository>
       <releases>
@@ -259,4 +259,8 @@
   <reporting>
     <outputDirectory>target/site</outputDirectory>
   </reporting>
+		<properties>
+			<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+			<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		</properties>
 </project>
