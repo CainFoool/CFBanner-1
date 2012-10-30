@@ -63,12 +63,7 @@ public class CFBanner extends JavaPlugin implements Listener
 	//Start disable code
 	public void onDisable()
 	{
-		//Print stuff
-		log.info("===================");
-		log.info(" CFBanner Disabled ");
-		log.info("     Thanks for    ");
-		log.info("   using CFBanner! ");
-		log.info("====================");
+		//TODO: On disable
 	}
 	//End disable code
 	//Listener code
