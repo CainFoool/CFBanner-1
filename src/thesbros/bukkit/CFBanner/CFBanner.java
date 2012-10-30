@@ -26,37 +26,34 @@ public class CFBanner extends JavaPlugin implements Listener
 	{
 		if(this.getConfig().getBoolean("enabled") == true)
 		{
-		this.getConfig().options().copyDefaults(true);
-		if(this.getConfig().getBoolean("autoUpdate") == true)
-		{
-			Updater updater = new Updater(this, this.getName().toLowerCase(), this.getFile(), Updater.UpdateType.DEFAULT, true);
-		}
-		this.saveConfig();
-		//Register the Listener
-		getServer().getPluginManager().registerEvents(this, this);
-		try
-		{
-		    Metrics metrics = new Metrics(this);
-		    metrics.start();
-		}
-		catch (IOException e)
-		{
-		    log.severe("CFBanner: Could not load Metrics!");
-		}
-			//Print stuff
-			log.info("====================");
-			log.info("  CFBanner Enabled  ");
-			log.info("   Made by opspwns  ");
-			log.info("   and CainFoool.   ");
-			log.info("====================");
-		}
-		else
-		{
-			//Print stuff
-			PluginManager pluginManager = Bukkit.getServer().getPluginManager();
-			log.info("CFBanner: Plugin not enabled! Check config.yml to enable!");
-			pluginManager.disablePlugin(this);
-		}
+			this.getConfig().options().copyDefaults(true);
+			if(this.getConfig().getBoolean("autoUpdate") == true)
+			{
+				Updater updater = new Updater(this, this.getName().toLowerCase(), this.getFile(), Updater.UpdateType.DEFAULT, true);
+			}
+			this.saveConfig();
+			//Register the Listener
+			getServer().getPluginManager().registerEvents(this, this);
+			try
+			{
+				Metrics metrics = new Metrics(this);
+				metrics.start();
+			}
+			catch (IOException e)
+			{
+				log.severe("CFBanner: Could not load Metrics!");
+			}
+				//TODO: On enable
+			}
+			else
+			{
+				//PluginManager
+				PluginManager pluginManager = Bukkit.getServer().getPluginManager();
+				//Oh no!
+				log.info("CFBanner: Plugin not enabled! Check config.yml to enable!");
+				//Disable me
+				pluginManager.disablePlugin(this);
+			}
 	}
 	//End enable code
 	
