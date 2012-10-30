@@ -55,6 +55,13 @@
           <exclude>**/*.java</exclude>
         </excludes>
       </resource>
+	<resource>
+		<directory>src/main/resources/</directory>
+		<includes>
+			<include>plugin.yml</include>
+			<include>config.yml</include>
+		</includes>
+	</resource>
     </resources>
     <testResources>
       <testResource>
