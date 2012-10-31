@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>thesbros.bukkit.CFBanner</groupId>
   <artifactId>CFBanner</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>3.3.4-DEV</version>
   <name>CFBanner</name>
   <url>http://dev.bukkit.org/server-mods/cfbanner</url>
   <repositories>

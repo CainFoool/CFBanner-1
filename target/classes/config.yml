@@ -1,0 +1,9 @@
+# Config for CFBanner
+# Set enabled to false to disable plugin
+# Set showRunningCFBanner to true to tell all players who join this server is running CFBanner
+# runningCFBannerMessage = message to show if showRunningCFBanner is on. NOTE: COLORS DO NOT WORK ON runningCFBannerMessage
+# autoUpdate = true=automatically update, false=don't automatically update
+enabled: true
+showRunningCFBanner: false
+runningCFBannerMessage: This server is running CFBanner. Beware, hackers. >:3
+autoUpdate: true
