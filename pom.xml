@@ -69,7 +69,7 @@
       </testResource>
     </testResources>
     <directory>target</directory>
-    <finalName>CFBanner-0.0.1-SNAPSHOT</finalName>
+    <finalName>CFBanner-${version}</finalName>
     <pluginManagement>
       <plugins>
         <plugin>
