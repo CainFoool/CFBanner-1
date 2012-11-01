@@ -296,7 +296,7 @@ public class Updater
                 // Unzip
                 unzip(dFile.getCanonicalPath());
             }
-            if(announce) plugin.getLogger().info("Finished updating.");
+            if(announce) plugin.getLogger().info("Finished updating. Restart or reload (/rl) to install the new version.");
         }
         catch (Exception ex)
         {
