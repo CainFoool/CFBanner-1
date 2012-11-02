@@ -2,7 +2,7 @@ name: CFBanner
 main: thesbros.bukkit.CFBanner.CFBanner
 description: Bans various hacks from multiplayer servers
 author: opspwns, CainFoool
-version: 3.3.4
+version: 3.3.5
 permissions:
     cfbanner.*:
         description: Gives access to all cheats/hacks
