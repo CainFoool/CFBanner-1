@@ -68,33 +68,31 @@ public class CFBanner extends JavaPlugin implements Listener
 	String ZOMBE_CHEAT_CODE = "¤f ¤f ¤2 ¤0 ¤4 ¤8 ¤3 ¤9 ¤2 ¤0 ¤0 ¤2";
 	String CJB_CODE = "¤3 ¤9 ¤2 ¤0 ¤0 ¤0";
 	String REI_CODE = "¤0¤0¤1¤2¤3¤4¤5¤6¤7¤e¤f";
+	
 	@EventHandler(priority=EventPriority.HIGH)
 	public void onPlayerJoin(final PlayerJoinEvent event)
 	{
 		Player thePlayer = event.getPlayer();
-		if(getConfig().getBoolean("enabled") == true && getConfig().getBoolean("showRunningCFBanner") == true)
-		{
-			String message = getConfig().getString("runningCFBannerMessage");
-			thePlayer.sendMessage(message);
-		}
-		String message = "";
 		if (!thePlayer.hasPermission("cfbanner.fly"))
 		{
-			message = message + this.ZOMBE_FLY_CODE;
+			thePlayer.sendMessage(this.ZOMBE_FLY_CODE);;
 		} 
 		if (!thePlayer.hasPermission("cfbanner.xray"))
 		{
-			message = message + this.ZOMBE_CHEAT_CODE;
+			thePlayer.sendMessage(this.ZOMBE_CHEAT_CODE);
 		}
 		if (!thePlayer.hasPermission("cfbanner.cjb"))
 		{
-			message = message + this.CJB_CODE;
+			thePlayer.sendMessage(this.CJB_CODE);
 		}
 		if (thePlayer.hasPermission("cfbanner.minimap"))
 		{
-			message = message + this.REI_CODE;
+			thePlayer.sendMessage(this.REI_CODE);
 		}
-		thePlayer.sendMessage(message);
+		if(getConfig().getBoolean("enabled") == true && getConfig().getBoolean("showRunningCFBanner") == true)
+		{
+			thePlayer.sendMessage(getConfig().getString("runningCFBannerMessage"));
+		}
 	}	
 	//End listener code
 }
