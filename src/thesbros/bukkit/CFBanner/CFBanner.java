@@ -24,14 +24,14 @@ public class CFBanner extends JavaPlugin implements Listener
 	//Start enable code
 	public void onEnable()
 	{
-		if(this.getConfig().getBoolean("enabled") == true)
+		if(getConfig().getBoolean("enabled") == true)
 		{
-			this.getConfig().options().copyDefaults(true);
+			getConfig().options().copyDefaults(true);
 			if(this.getConfig().getBoolean("autoUpdate") == true)
 			{
-				Updater updater = new Updater(this, this.getName().toLowerCase(), this.getFile(), Updater.UpdateType.DEFAULT, true);
+				Updater updater = new Updater(this, getName().toLowerCase(), getFile(), Updater.UpdateType.DEFAULT, true);
 			}
-			this.saveConfig();
+			saveConfig();
 			//Register the Listener
 			getServer().getPluginManager().registerEvents(this, this);
 			try
