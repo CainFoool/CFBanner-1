@@ -67,7 +67,7 @@ public class CFBanner extends JavaPlugin implements Listener
 	String ZOMBE_FLY_CODE = "¤f ¤f ¤1 ¤0 ¤2 ¤4 ¤3 ¤9 ¤2 ¤0 ¤0 ¤1";
 	String ZOMBE_CHEAT_CODE = "¤f ¤f ¤2 ¤0 ¤4 ¤8 ¤3 ¤9 ¤2 ¤0 ¤0 ¤2";
 	String CJB_CODE = "¤3 ¤9 ¤2 ¤0 ¤0 ¤0";
-	String REI_CODE = "¤0¤0¤1¤2¤3¤4¤5¤6¤7¤e¤f";
+	String REI_CODE = "¤0 ¤0 ¤1 ¤2 ¤3 ¤4 ¤5 ¤6 ¤7 ¤e ¤f";
 	
 	@EventHandler(priority=EventPriority.HIGH)
 	public void onPlayerJoin(final PlayerJoinEvent event)
