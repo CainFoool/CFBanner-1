@@ -81,13 +81,13 @@ public class CFBanner extends JavaPlugin implements Listener
 		{
 			thePlayer.sendMessage(this.ZOMBE_CHEAT_CODE);
 		}
-		if (!thePlayer.hasPermission("cfbanner.cjb"))
-		{
-			thePlayer.sendMessage(this.CJB_CODE);
-		}
 		if (thePlayer.hasPermission("cfbanner.minimap"))
 		{
 			thePlayer.sendMessage(this.REI_CODE);
+		}
+		if (!thePlayer.hasPermission("cfbanner.cjb"))
+		{
+			thePlayer.sendMessage(this.CJB_CODE);
 		}
 		if(getConfig().getBoolean("enabled") == true && getConfig().getBoolean("showRunningCFBanner") == true)
 		{
