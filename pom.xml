@@ -7,45 +7,43 @@
   <version>3.3.5-DEV</version>
   <name>CFBanner</name>
   <url>http://dev.bukkit.org/server-mods/cfbanner</url>
-  <repositories>
-    <repository>
-      <id>bukkit-repo</id>
-      <url>http://repo.bukkit.org/content/groups/public/</url>
-    </repository>
-    <repository>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>central</id>
-      <name>Central Repository</name>
-      <url>http://repo.maven.apache.org/maven2</url>
-    </repository>
-  </repositories>
-  <dependencies>
-    <dependency>
-      <groupId>org.bukkit</groupId>
-      <artifactId>bukkit</artifactId>
-      <version>1.4.2-R0.2-SNAPSHOT</version>
-      <scope>compile</scope>
-    </dependency>
-  </dependencies>
-  <build>
-  <defaultGoal>clean install</defaultGoal>
-    <resources>
-      <resource>
-        <directory>src</directory>
-        <excludes>
-          <exclude>**/*.java</exclude>
-        </excludes>
-      </resource>
-	<resource>
-		<directory>.</directory>
-		<includes>
-			<include>plugin.yml</include>
-			<include>config.yml</include>
-		</includes>
-	</resource>
-    </resources>
+
+	<repositories>
+		<repository>
+		<snapshots>
+		<enabled>true</enabled>
+		<updatePolicy>always</updatePolicy>
+		<checksumPolicy>fail</checksumPolicy>
+		</snapshots>
+			<id>bukkit-repo</id>
+			<url>http://repo.bukkit.org/content/groups/public/</url>
+		</repository>
+		<repository>
+			<id>nuxeo-repo</id>
+			<name>Maven Nuxeo Repository</name>
+			<url>http://maven.nuxeo.org/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
+	<dependencies>
+		<dependency>
+			<groupId>org.bukkit</groupId>
+			<artifactId>craftbukkit</artifactId>
+			<version>1.4.2-R0.1-SNAPSHOT</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<defaultGoal>clean install</defaultGoal>
+		<resources>
+			<resource>
+				<directory>.</directory>
+				<includes>
+					<include>plugin.yml</include>
+					<include>config.yml</include>
+				</includes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -87,9 +85,7 @@
 				</executions>
 			</plugin>
 		</plugins>
-    <directory>target</directory>
-    <finalName>${project.name}-${project.version}</finalName>
-  </build>
+	</build>
   <properties>
 	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
