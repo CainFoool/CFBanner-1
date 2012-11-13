@@ -24,10 +24,10 @@ public class CFBanner extends JavaPlugin implements Listener
 	//Start enable code
 	public void onEnable()
 	{
-		if(getConfig().getBoolean("enabled") == true)
+		if(getConfig().getBoolean("enabled")) // Don't need to == true whenever Java defaults the check to true
 		{
 			getConfig().options().copyDefaults(true);
-			if(this.getConfig().getBoolean("autoUpdate") == true)
+			if(this.getConfig().getBoolean("autoUpdate")) // Same here ^^
 			{
 				Updater updater = new Updater(this, getName().toLowerCase(), getFile(), Updater.UpdateType.DEFAULT, true);
 			}
@@ -64,10 +64,12 @@ public class CFBanner extends JavaPlugin implements Listener
 	}
 	//End disable code
 	//Listener code
-	String ZOMBE_FLY_CODE = "คf คf ค1 ค0 ค2 ค4 ค3 ค9 ค2 ค0 ค0 ค1";
-	String ZOMBE_CHEAT_CODE = "คf คf ค2 ค0 ค4 ค8 ค3 ค9 ค2 ค0 ค0 ค2";
-	String CJB_CODE = "ค3 ค9 ค2 ค0 ค0 ค0";
-	String REI_CODE = "ค0 ค0 ค1 ค2 ค3 ค4 ค5 ค6 ค7 คe คf";
+	String ZOMBE_FLY_CODE = "ยงf ยงf ยง1 ยง0 ยง2 ยง4 ยง3 ยง9 ยง2 ยง0 ยง0 ยง1";
+	String ZOMBE_CHEAT_CODE = "ยงf ยงf ยง2 ยง0 ยง4 ยง8 ยง3 ยง9 ยง2 ยง0 ยง0 ยง2";
+	String CJB_CODE = "ยง3 ยง9 ยง2 ยง0 ยง0 ยง0";
+	String REI_CODE = "ยง0 ยง0 ยง1 ยง2 ยง3 ยง4 ยง5 ยง6 ยง7 ยงe ยงf";
+
+	// I have no idea what you were doing with the code above, but this should work now.
 	
 	@EventHandler(priority=EventPriority.HIGH)
 	public void onPlayerJoin(final PlayerJoinEvent event)
@@ -89,7 +91,7 @@ public class CFBanner extends JavaPlugin implements Listener
 		{
 			thePlayer.sendMessage(this.CJB_CODE);
 		}
-		if(getConfig().getBoolean("enabled") == true && getConfig().getBoolean("showRunningCFBanner") == true)
+		if(getConfig().getBoolean("enabled") == true && getConfig().getBoolean("showRunningCFBanner"))
 		{
 			thePlayer.sendMessage(getConfig().getString("runningCFBannerMessage"));
 		}
